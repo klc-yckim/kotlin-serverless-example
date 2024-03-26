@@ -1,4 +1,4 @@
-package com.example.persistences
+package com.example.persistences.config
 
 import com.example.models.Articles
 import kotlinx.coroutines.Dispatchers

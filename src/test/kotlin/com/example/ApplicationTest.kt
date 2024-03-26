@@ -1,6 +1,6 @@
 package com.example
 
-import com.example.persistences.DatabaseSingleton
+import com.example.persistences.config.DatabaseSingleton
 import com.example.plugins.configureRouting
 import io.ktor.client.request.*
 import io.ktor.http.*

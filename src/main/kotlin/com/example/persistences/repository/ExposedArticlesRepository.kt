@@ -3,7 +3,7 @@ package com.example.persistences.repository
 import com.example.models.Article
 import com.example.models.Articles
 import com.example.models.ArticlesRepository
-import com.example.persistences.DatabaseSingleton.dbQuery
+import com.example.persistences.config.DatabaseSingleton.dbQuery
 import kotlinx.coroutines.runBlocking
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
