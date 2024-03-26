@@ -2,10 +2,13 @@ package com.example
 
 import com.example.plugins.*
 import com.typesafe.config.ConfigFactory
+import io.ktor.serialization.jackson.*
 import io.ktor.server.application.*
 import io.ktor.server.config.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import io.ktor.server.plugins.contentnegotiation.*
+import kotlinx.serialization.json.Json
 
 fun main() {
     val config = HoconApplicationConfig(ConfigFactory.load())
@@ -17,6 +20,9 @@ fun main() {
 }
 
 fun Application.module() {
+    install(ContentNegotiation) {
+        jackson()
+    }
 //    configureSecurity()
     configureRouting()
 }
