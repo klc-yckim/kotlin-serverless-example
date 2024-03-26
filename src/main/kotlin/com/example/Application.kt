@@ -1,12 +1,17 @@
 package com.example
 
 import com.example.plugins.*
+import com.typesafe.config.ConfigFactory
 import io.ktor.server.application.*
+import io.ktor.server.config.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 
 fun main() {
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0", module = Application::module)
+    val config = HoconApplicationConfig(ConfigFactory.load())
+    val port = config.property("ktor.deployment.port").getString().toInt()
+    val host = config.property("ktor.deployment.host").toString()
+    embeddedServer(Netty, port = port, host = host, module = Application::module)
             .start(wait = true)
 }
 
