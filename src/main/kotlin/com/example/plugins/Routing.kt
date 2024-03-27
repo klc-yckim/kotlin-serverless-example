@@ -12,6 +12,9 @@ fun Application.configureRouting() {
         get("/v1/articles") {
             call.respond(HttpStatusCode.OK, getArticles())
         }
+        get("/") {
+            call.respondText("aaa")
+        }
     }
 }
 

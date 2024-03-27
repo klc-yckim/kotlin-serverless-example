@@ -1,6 +1,5 @@
 package com.example
 
-import com.example.persistences.config.DatabaseSingleton
 import com.example.plugins.configureRouting
 import com.typesafe.config.ConfigFactory
 import io.ktor.serialization.jackson.*
@@ -23,7 +22,7 @@ fun Application.module() {
     install(ContentNegotiation) {
         jackson()
     }
-    DatabaseSingleton.init()
+//    DatabaseSingleton.init()
 //    configureSecurity()
     configureRouting()
 }
